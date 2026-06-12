@@ -1,0 +1,13 @@
+# Agentic AI Research Agent Dependencies
+
+# Core LLM API
+groq>=0.4.0
+
+# Web Interface
+streamlit>=1.28.0
+
+# Environment Management
+python-dotenv>=1.0.0
+
+# Utilities
+requests>=2.31.0
