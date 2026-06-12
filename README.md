@@ -222,17 +222,3 @@ project/
 3. Run: `streamlit run agentic_app.py`
 4. Try different topics and debate modes
 5. Deploy to Streamlit Cloud for live demo
-
----
-
-## Interview Explanation
-
-**Short version (2 min):**
-> "I built an autonomous research agent. It doesn't just generate text - it makes decisions at 6 steps: planning what to research, executing searches, evaluating sources, finding contradictions, deciding whether to iterate, and creating reports. The metadata proves what decisions it made."
-
-**Key point:**
-> "Unlike ChatGPT, this agent shows its reasoning and branches based on what it discovers. If it finds contradictions, it iterates. It's not a black box - you can see everything it decided to do."
-
----
-
-For detailed explanations, see the code comments in `agentic_agent.py`.
