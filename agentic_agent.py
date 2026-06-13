@@ -102,7 +102,7 @@ class AgenticResearchAgent:
             print("\n⚠️  AGENT DETECTED CONTRADICTIONS - ITERATING...")
             additional_research = self._agent_iterate_on_contradictions(
                 topic,
-                consensus_analysis["contradictions"]
+                consensus_analysis["contradiction_points"]
             )
             # Re-evaluate with new information
             all_sources = evaluated_sources + additional_research
@@ -157,7 +157,7 @@ Available research angles:
 Based on the topic, decide which angles you MUST research.
 Also decide: what would contradict each other? What might disagree?
 
-Return ONLY valid JSON:
+Return ONLY valid JSON (NO markdown code blocks, no backticks, just pure JSON):
 {{
   "research_angles": ["angle1", "angle2", "angle3"],
   "search_queries": ["query1", "query2", "query3", "query4"],
@@ -245,7 +245,7 @@ For each result, determine:
 4. Source type (expert/research/popular/anecdotal)
 5. Any contradictions with other results
 
-Return ONLY JSON:
+Return ONLY valid JSON (NO markdown code blocks, no backticks, just pure JSON):
 {{
   "evaluated_sources": [
     {{
@@ -301,7 +301,7 @@ Determine:
 4. What's the confidence level?
 5. What needs more research?
 
-Return ONLY valid JSON with these fields:
+Return ONLY valid JSON (NO markdown code blocks, no backticks, just pure JSON) with these fields:
 {{
 "consensus_points": [
     {{"point": "string describing consensus point", "confidence": 0-100}}
@@ -441,7 +441,6 @@ SOURCE {i}: {source['query']}
 
 def main():
     """Test the agentic agent"""
-    return {}
     agent = AgenticResearchAgent()
 
     # Same topic, but agent will research it autonomously
@@ -481,4 +480,4 @@ def main():
 
     return result
 
-main()
+# main()
